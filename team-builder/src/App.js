@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
 
-import {NewMemberForm} from "./components/Form"
+import NewMemberForm, {MemberInfo} from "./components/Form"
 
 function App() {
-  const [member, setMember] = useState([])
+  const [members, setMember] = useState([])
+
+  
 
   const addNewMember = newMember => {
     const newOne = {
@@ -12,14 +14,14 @@ function App() {
       email: newMember.email,
       role: newMember.role
     };
-    setMember([...member, newOne]);
+    setMember([...members, newOne]);
   }
 
   return (
     <div className="teamMemberList">
-      
+      <MemberInfo />
       <h1>Join my Team!</h1>
-        <NewMemberForm />
+        <NewMemberForm addNewMember={addNewMember}/>
     </div>
   );
 }
