@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import {NewMemberForm} from "./components/Form"
 
 function App() {
   const [member, setMember] = useState([])
@@ -17,8 +17,9 @@ function App() {
 
   return (
     <div className="teamMemberList">
-      <h1>Meet my Team!</h1>
-
+      
+      <h1>Join my Team!</h1>
+        <NewMemberForm />
     </div>
   );
 }
